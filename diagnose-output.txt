@@ -1,0 +1,323 @@
+=== System Resources ===
+               total        used        free      shared  buff/cache   available
+Mem:           3.8Gi       2.9Gi       186Mi       100Mi       779Mi       612Mi
+Swap:          2.6Gi       1.3Gi       1.3Gi
+Filesystem      Size  Used Avail Use% Mounted on
+tmpfs           392M  1.8M  390M   1% /run
+/dev/sda3        24G   21G  2.5G  90% /
+tmpfs           2.0G   71M  1.9G   4% /dev/shm
+tmpfs           5.0M  8.0K  5.0M   1% /run/lock
+/dev/sda2       512M  6.1M  506M   2% /boot/efi
+tmpfs           392M  100K  392M   1% /run/user/1000
+2.7G	/swapfile
+3.6G	/home
+6.2G	/snap
+7.5G	/var
+7.7G	/usr
+top - 07:44:33 up 39 min,  1 user,  load average: 1.86, 2.22, 2.14
+Tasks: 257 total,   1 running, 255 sleeping,   0 stopped,   1 zombie
+%Cpu(s):  3.2 us,  6.5 sy,  0.0 ni, 87.1 id,  0.0 wa,  0.0 hi,  3.2 si,  0.0 st
+MiB Mem :   3916.5 total,    495.3 free,   2237.9 used,   1183.3 buff/cache
+MiB Swap:   2680.0 total,    887.8 free,   1792.2 used.   1310.8 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+   3985 999       20   0 1512536  18348   9088 S   6.2   0.5   0:13.59 mongod
+   6742 eya       20   0 1161.5g 120032  71552 S   6.2   3.0   0:06.46 code
+   6751 eya       20   0 1161.5g  77556  68096 S   6.2   1.9   0:08.62 code
+      1 root      20   0  166772   8172   5740 S   0.0   0.2   0:02.46 systemd
+      2 root      20   0       0      0      0 S   0.0   0.0   0:00.01 kthreadd
+      3 root      20   0       0      0      0 S   0.0   0.0   0:00.00 pool_workqueue_release
+      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-rcu_g
+      5 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-rcu_p
+=== Running Processes ===
+root        1733  0.0  0.0   2796  1920 ?        Ss   07:05   0:00 fusermount3 -o rw,nosuid,nodev,fsname=portal,auto_unmount,subtype=portal -- /run/user/1000/doc
+eya         6713  0.9  2.1 1217918064 85664 ?    Sl   07:32   0:07 /usr/share/code/code --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --crashpad-handler-pid=3141 --enable-crash-reporter=4e6f74d1-625a-4034-9a19-2c3b42c8cefc,no_channel --user-data-dir=/home/eya/.config/Code --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,16615610166890189704,8586083719782333816,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports --disable-features=CalculateNativeWinOcclusion,SpareRendererForSitePerProcess --variations-seed-version
+eya         6733  9.5  7.1 1221379876 286184 ?   Sl   07:32   1:07 /usr/share/code/code --type=renderer --crashpad-handler-pid=3141 --enable-crash-reporter=4e6f74d1-625a-4034-9a19-2c3b42c8cefc,no_channel --user-data-dir=/home/eya/.config/Code --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --app-path=/usr/share/code/resources/app --enable-sandbox --enable-blink-features=HighlightAPI --js-flags=--nodecommit_pooled_pages --disable-gpu-compositing --disable-blink-features=FontMatchingCTMigration,StandardizedBrowserZoom, --lang=en-US --num-raster-threads=1 --renderer-client-id=26 --time-ticks-at-unix-epoch=-1744524289178168 --launch-time-ticks=1669191905 --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,16615610166890189704,8586083719782333816,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports --disable-features=CalculateNativeWinOcclusion,SpareRendererForSitePerProcess --variations-seed-version --vscode-window-config=vscode:e66bbd88-b8bd-43bb-a3cb-e79881f3dde5
+eya         6742  0.9  2.9 1217877584 120032 ?   Sl   07:32   0:06 /usr/share/code/code --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --dns-result-order=ipv4first --inspect-port=0 --crashpad-handler-pid=3141 --enable-crash-reporter=4e6f74d1-625a-4034-9a19-2c3b42c8cefc,no_channel --user-data-dir=/home/eya/.config/Code --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,16615610166890189704,8586083719782333816,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports --disable-features=CalculateNativeWinOcclusion,SpareRendererForSitePerProcess --variations-seed-version
+eya         6751  1.2  1.9 1217893296 77556 ?    Sl   07:32   0:08 /usr/share/code/code --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --crashpad-handler-pid=3141 --enable-crash-reporter=4e6f74d1-625a-4034-9a19-2c3b42c8cefc,no_channel --user-data-dir=/home/eya/.config/Code --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,16615610166890189704,8586083719782333816,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports --disable-features=CalculateNativeWinOcclusion,SpareRendererForSitePerProcess --variations-seed-version
+eya         6799  0.4  2.5 1216098052 100304 ?   Sl   07:32   0:03 /usr/share/code/code --max-old-space-size=3072 /usr/share/code/resources/app/extensions/node_modules/typescript/lib/tsserver.js --serverMode partialSemantic --useInferredProjectPerProjectRoot --disableAutomaticTypingAcquisition --cancellationPipeName /tmp/vscode-typescript1000/ce85a827d271f6579956/tscancellation-0cd37fbc933fae7624d6.tmp* --locale en --noGetErrOnBackgroundUpdate --canUseWatchEvents --validateDefaultNpmLocation --useNodeIpc
+eya         6800  3.9  5.5 1216098052 220768 ?   Sl   07:32   0:27 /usr/share/code/code --max-old-space-size=3072 /usr/share/code/resources/app/extensions/node_modules/typescript/lib/tsserver.js --useInferredProjectPerProjectRoot --enableTelemetry --cancellationPipeName /tmp/vscode-typescript1000/ce85a827d271f6579956/tscancellation-28481f16afb5177df7b0.tmp* --locale en --noGetErrOnBackgroundUpdate --canUseWatchEvents --validateDefaultNpmLocation --useNodeIpc
+eya         6815  0.1  1.6 1216098036 66616 ?    Sl   07:32   0:01 /usr/share/code/code /usr/share/code/resources/app/extensions/node_modules/typescript/lib/typingsInstaller.js --globalTypingsCacheLocation /home/eya/.cache/typescript/5.8 --enableTelemetry --typesMapLocation /usr/share/code/resources/app/extensions/node_modules/typescript/lib/typesMap.json --validateDefaultNpmLocation
+eya         7471  0.1  1.1 11527500 45356 pts/2  Sl   07:35   0:00 node /home/eya/phone-accessories-app-2/frontend/node_modules/.bin/next dev
+eya         8027  0.0  0.0   2896  1664 pts/4    S    07:38   0:00 sh -c node src/index.js
+eya         8028  0.4  1.6 1185216 64532 pts/4   Sl   07:38   0:01 node src/index.js
+eya         8555  0.1  1.9 1216098052 78172 ?    Sl   07:41   0:00 /usr/share/code/code /usr/share/code/resources/app/extensions/json-language-features/server/dist/node/jsonServerMain --node-ipc --clientProcessId=6742
+eya         8884  0.0  0.0   9216  2560 pts/5    S+   07:44   0:00 grep node
+tcp6       0      0 :::3000                 :::*                    LISTEN     
+tcp6       0      0 :::3002                 :::*                    LISTEN     
+COMMAND  PID USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
+node    8028  eya   18u  IPv6  37853      0t0  TCP *:3002 (LISTEN)
+=== Service Logs ===
+total 132
+drwxrwxr-x   4 eya eya   4096 أفريل  13 07:20 .
+drwxrwxr-x   6 eya eya   4096 أفريل  12 23:02 ..
+-rw-rw-r--   1 eya eya    466 أفريل  12 22:25 auth-service.log
+-rw-rw-r--   1 eya eya    110 أفريل  12 21:23 .env
+drwxrwxr-x 120 eya eya   4096 أفريل  12 22:25 node_modules
+-rw-rw-r--   1 eya eya    284 أفريل  12 21:15 package.json
+-rw-rw-r--   1 eya eya 100691 أفريل  13 07:20 package-lock.json
+-rw-rw-r--   1 eya eya    101 أفريل  13 07:37 service.log
+drwxrwxr-x   3 eya eya   4096 أفريل  13 07:36 src
+total 132
+drwxrwxr-x   4 eya eya   4096 أفريل  12 22:46 .
+drwxrwxr-x   6 eya eya   4096 أفريل  12 23:02 ..
+-rw-rw-r--   1 eya eya    113 أفريل  12 21:52 .env
+drwxrwxr-x 119 eya eya   4096 أفريل  12 21:53 node_modules
+-rw-rw-r--   1 eya eya    261 أفريل  12 21:52 package.json
+-rw-rw-r--   1 eya eya 100384 أفريل  13 07:21 package-lock.json
+-rw-rw-r--   1 eya eya     52 أفريل  12 22:25 product-service.log
+-rw-rw-r--   1 eya eya    107 أفريل  13 07:38 service.log
+drwxrwxr-x   2 eya eya   4096 أفريل  13 07:38 src
+total 136
+drwxrwxr-x   4 eya eya   4096 أفريل  12 22:46 .
+drwxrwxr-x   6 eya eya   4096 أفريل  12 23:02 ..
+-rw-rw-r--   1 eya eya    153 أفريل  12 21:55 .env
+drwxrwxr-x 128 eya eya   4096 أفريل  13 07:33 node_modules
+-rw-rw-r--   1 eya eya     50 أفريل  12 22:26 order-service.log
+-rw-rw-r--   1 eya eya    282 أفريل  13 07:33 package.json
+-rw-rw-r--   1 eya eya 104322 أفريل  13 07:33 package-lock.json
+-rw-rw-r--   1 eya eya    103 أفريل  13 07:35 service.log
+drwxrwxr-x   2 eya eya   4096 أفريل  13 07:34 src
+total 132
+drwxrwxr-x   7 eya eya  4096 أفريل  13 07:22 .
+drwxrwxr-x   6 eya eya  4096 أفريل  12 23:02 ..
+drwxrwxr-x   8 eya eya  4096 أفريل  12 22:30 app
+drwxrwxr-x   2 eya eya  4096 أفريل  12 22:04 components
+-rw-rw-r--   1 eya eya   133 أفريل  13 07:35 .env
+-rw-rw-r--   1 eya eya   157 أفريل  12 22:04 .env.local
+-rw-rw-r--   1 eya eya   683 أفريل  12 22:38 frontend.log
+drwxrwxr-x   6 eya eya  4096 أفريل  13 07:36 .next
+drwxrwxr-x 141 eya eya  4096 أفريل  13 07:35 node_modules
+-rw-rw-r--   1 eya eya   423 أفريل  12 22:22 package.json
+-rw-rw-r--   1 eya eya 78358 أفريل  13 07:35 package-lock.json
+drwxrwxr-x   2 eya eya  4096 أفريل  12 21:08 public
+-rw-rw-r--   1 eya eya   288 أفريل  13 07:41 service.log
+-rw-rw-r--   1 eya eya     0 أفريل  12 22:05 tailwind.cinfig.js
+-rw-rw-r--   1 eya eya   241 أفريل  12 22:22 tailwind.config.js
+npm error code ENOENT
+npm error syscall open
+npm error path /home/eya/phone-accessories-app-2/package.json
+npm error errno -2
+npm error enoent Could not read package.json: Error: ENOENT: no such file or directory, open '/home/eya/phone-accessories-app-2/package.json'
+npm error enoent This is related to npm not being able to find a file.
+npm error enoent
+npm error A complete log of this run can be found in: /home/eya/.npm/_logs/2025-04-12T20_42_55_364Z-debug-0.log
+
+> auth-service@1.0.0 start
+> node src/index.js
+
+(node:17640) [MONGOOSE] DeprecationWarning: Mongoose: the `strictQuery` option will be switched back to `false` by default in Mongoose 7. Use `mongoose.set('strictQuery', false);` if you want to prepare for this change. Or use `mongoose.set('strictQuery', true);` to suppress this warning.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+Auth service running on port 3001
+MongoDB connected
+
+> auth-service@1.0.0 start
+> node src/index.js
+
+Auth service running on port 3001
+MongoDB connected
+
+> product-service@1.0.0 start
+> node src/index.js
+
+
+> product-service@1.0.0 start
+> node src/index.js
+
+Product service running on port 3002
+MongoDB connected
+  - Local:        http://localhost:3000
+  - Environments: .env.local, .env
+
+ ✓ Starting...
+ ✓ Ready in 5.7s
+ ○ Compiling / ...
+ ✓ Compiled / in 10s (503 modules)
+ GET / 200 in 11039ms
+ GET / 200 in 323ms
+ GET / 200 in 231ms
+ ○ Compiling / ...
+ ✓ Compiled / in 3.5s (503 modules)
+ GET / 200 in 3651ms
+ ✓ Compiled in 189ms (245 modules)
+ ✓ Compiled in 88ms (245 modules)
+ ✓ Compiled / in 369ms (244 modules)
+ GET / 200 in 542ms
+ ○ Compiling /login ...
+ ✓ Compiled /login in 606ms (495 modules)
+                                                                                                                                                                                                                                        [?25h
+
+> order-service@1.0.0 start
+> node src/index.js
+
+
+> order-service@1.0.0 start
+> node src/index.js
+
+Order service running on port 3003
+MongoDB connected
+=== Service Connectivity ===
+Auth service (3001) failed
+Product service runningOrder service (3003) failed
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="/_next/static/css/app/layout.css?v=1744526674399" data-precedence="next_static/css/app/layout.css"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack.js?v=1744526674399"/><script src="/_next/static/chunks/main-app.js?v=1744526674399" async=""></script><script src="/_next/static/chunks/app-pages-internals.js" async=""></script><script src="/_next/static/chunks/app/page.js" async=""></script><title>Phone Accessories Shop</title><meta name="description" content="Buy phone accessories online"/><script src="/_next/static/chunks/polyfills.js" noModule=""></script></head><body><div>Loading...</div><script src="/_next/static/chunks/webpack.js?v=1744526674399" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0]);self.__next_f.push([2,null])</script><script>self.__next_f.push([1,"1:HL[\"/_next/static/css/app/layout.css?v=1744526674399\",\"style\"]\n0:D{\"name\":\"r2\",\"env\":\"Server\"}\n"])</script><script>self.__next_f.push([1,"2:I[\"(app-pages-browser)/./node_modules/next/dist/client/components/app-router.js\",[\"app-pages-internals\",\"static/chunks/app-pages-internals.js\"],\"\"]\n4:I[\"(app-pages-browser)/./node_modules/next/dist/client/components/client-page.js\",[\"app-pages-internals\",\"static/chunks/app-pages-internals.js\"],\"ClientPageRoot\"]\n5:I[\"(app-pages-browser)/./app/page.js\",[\"app/page\",\"static/chunks/app/page.js\"],\"default\",1]\n7:I[\"(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js\",[\"app-pages-internals\",\"static/chunks/app-pages-internals.js\"],\"\"]\n8:I[\"(app-pages-browser)/./node_modules/next/dist/client/components/render-from-template-context.js\",[\"app-pages-internals\",\"static/chunks/app-pages-internals.js\"],\"\"]\nc:I[\"(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js\",[\"app-pages-internals\",\"static/chunks/app-pages-internals.js\"],\"\"]\n3:D{\"name\":\"\",\"env\":\"Server\"}\n6:D{\"name\":\"RootLayout\",\"env\":\"Server\"}\n9:D{\"name\":\"NotFound\",\"env\":\"Server\"}\n9:[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":\"404\"}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could"])</script><script>self.__next_f.push([1," not be found.\"}]}]]}]}]]\n6:[\"$\",\"html\",null,{\"lang\":\"en\",\"children\":[\"$\",\"body\",null,{\"children\":[\"$\",\"$L7\",null,{\"parallelRouterKey\":\"children\",\"segmentPath\":[\"children\"],\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L8\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$9\",\"notFoundStyles\":[]}]}]}]\na:D{\"name\":\"rQ\",\"env\":\"Server\"}\na:null\nb:D{\"name\":\"\",\"env\":\"Server\"}\nd:[]\n0:[\"$\",\"$L2\",null,{\"buildId\":\"development\",\"assetPrefix\":\"\",\"urlParts\":[\"\",\"\"],\"initialTree\":[\"\",{\"children\":[\"__PAGE__\",{}]},\"$undefined\",\"$undefined\",true],\"initialSeedData\":[\"\",{\"children\":[\"__PAGE__\",{},[[\"$L3\",[\"$\",\"$L4\",null,{\"props\":{\"params\":{},\"searchParams\":{}},\"Component\":\"$5\"}],null],null],null]},[[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/app/layout.css?v=1744526674399\",\"precedence\":\"next_static/css/app/layout.css\",\"crossOrigin\":\"$undefined\"}]],\"$6\"],null],null],\"couldBeIntercepted\":false,\"initialHead\":[\"$a\",\"$Lb\"],\"globalErrorComponent\":\"$c\",\"missingSlots\":\"$Wd\"}]\n"])</script><script>self.__next_f.push([1,"b:[[\"$\",\"meta\",\"0\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}],[\"$\",\"meta\",\"1\",{\"charSet\":\"utf-8\"}],[\"$\",\"title\",\"2\",{\"children\":\"Phone Accessories Shop\"}],[\"$\",\"meta\",\"3\",{\"name\":\"description\",\"content\":\"Buy phone accessories online\"}]]\n3:null\n"])</script></body></html>=== Environment Configuration ===
+MONGO_URI=mongodb://localhost:27017/auth_db
+JWT_SECRET=9QzD5j8z0CHhir0QA67W/59MgII8Qk4jkPVHqKve+tc=
+PORT=3001
+MONGO_URI=mongodb://localhost:27018/product_db
+JWT_SECRET=9QzD5j8z0CHhir0QA67W/59MgII8Qk4jkPVHqKve+tc=
+PORT=3002
+MONGO_URI=mongodb://localhost:27019/order_db
+JWT_SECRET=9QzD5j8z0CHhir0QA67W/59MgII8Qk4jkPVHqKve+tc=
+PRODUCT_SERVICE_URL=http://localhost:3002
+PORT=3003
+NEXT_PUBLIC_AUTH_API=http://localhost:3001
+NEXT_PUBLIC_PRODUCT_API=http://localhost:3002
+NEXT_PUBLIC_ORDER_API=http://localhost:3003
+=== MongoDB Status ===
+CONTAINER ID   IMAGE       COMMAND                  CREATED        STATUS          PORTS                                             NAMES
+012e1d634cfc   mongo:4.4   "docker-entrypoint.s…"   10 hours ago   Up 30 minutes   0.0.0.0:27019->27017/tcp, [::]:27019->27017/tcp   order-mongo
+8249c51774be   mongo:4.4   "docker-entrypoint.s…"   10 hours ago   Up 30 minutes   0.0.0.0:27018->27017/tcp, [::]:27018->27017/tcp   product-mongo
+99e6e942cf44   mongo:4.4   "docker-entrypoint.s…"   10 hours ago   Up 30 minutes   0.0.0.0:27017->27017/tcp, [::]:27017->27017/tcp   auth-mongo
+{"t":{"$date":"2025-04-13T06:38:34.749+00:00"},"s":"I",  "c":"NETWORK",  "id":22944,   "ctx":"conn12","msg":"Connection ended","attr":{"remote":"172.17.0.1:47600","connectionId":12,"connectionCount":2}}
+{"t":{"$date":"2025-04-13T06:38:34.750+00:00"},"s":"I",  "c":"NETWORK",  "id":22944,   "ctx":"conn11","msg":"Connection ended","attr":{"remote":"172.17.0.1:33260","connectionId":11,"connectionCount":1}}
+{"t":{"$date":"2025-04-13T06:38:34.752+00:00"},"s":"I",  "c":"-",        "id":20883,   "ctx":"conn10","msg":"Interrupted operation as its client disconnected","attr":{"opId":17761}}
+{"t":{"$date":"2025-04-13T06:38:34.752+00:00"},"s":"I",  "c":"NETWORK",  "id":22944,   "ctx":"conn10","msg":"Connection ended","attr":{"remote":"172.17.0.1:33244","connectionId":10,"connectionCount":0}}
+{"t":{"$date":"2025-04-13T06:39:01.910+00:00"},"s":"I",  "c":"STORAGE",  "id":22430,   "ctx":"WTCheckpointThread","msg":"WiredTiger message","attr":{"message":"[1744526341:910742][1:0x7edd9d400700], WT_SESSION.checkpoint: [WT_VERB_CHECKPOINT_PROGRESS] saving checkpoint snapshot min: 58, snapshot max: 58 snapshot count: 0, oldest timestamp: (0, 0) , meta checkpoint timestamp: (0, 0) base write gen: 305"}}
+{"t":{"$date":"2025-04-13T06:40:02.039+00:00"},"s":"I",  "c":"STORAGE",  "id":22430,   "ctx":"WTCheckpointThread","msg":"WiredTiger message","attr":{"message":"[1744526402:38569][1:0x7edd9d400700], WT_SESSION.checkpoint: [WT_VERB_CHECKPOINT_PROGRESS] saving checkpoint snapshot min: 61, snapshot max: 61 snapshot count: 0, oldest timestamp: (0, 0) , meta checkpoint timestamp: (0, 0) base write gen: 305"}}
+{"t":{"$date":"2025-04-13T06:41:02.085+00:00"},"s":"I",  "c":"STORAGE",  "id":22430,   "ctx":"WTCheckpointThread","msg":"WiredTiger message","attr":{"message":"[1744526462:85606][1:0x7edd9d400700], WT_SESSION.checkpoint: [WT_VERB_CHECKPOINT_PROGRESS] saving checkpoint snapshot min: 63, snapshot max: 63 snapshot count: 0, oldest timestamp: (0, 0) , meta checkpoint timestamp: (0, 0) base write gen: 305"}}
+{"t":{"$date":"2025-04-13T06:42:02.109+00:00"},"s":"I",  "c":"STORAGE",  "id":22430,   "ctx":"WTCheckpointThread","msg":"WiredTiger message","attr":{"message":"[1744526522:109452][1:0x7edd9d400700], WT_SESSION.checkpoint: [WT_VERB_CHECKPOINT_PROGRESS] saving checkpoint snapshot min: 65, snapshot max: 65 snapshot count: 0, oldest timestamp: (0, 0) , meta checkpoint timestamp: (0, 0) base write gen: 305"}}
+{"t":{"$date":"2025-04-13T06:43:02.149+00:00"},"s":"I",  "c":"STORAGE",  "id":22430,   "ctx":"WTCheckpointThread","msg":"WiredTiger message","attr":{"message":"[1744526582:149817][1:0x7edd9d400700], WT_SESSION.checkpoint: [WT_VERB_CHECKPOINT_PROGRESS] saving checkpoint snapshot min: 67, snapshot max: 67 snapshot count: 0, oldest timestamp: (0, 0) , meta checkpoint timestamp: (0, 0) base write gen: 305"}}
+{"t":{"$date":"2025-04-13T06:44:02.211+00:00"},"s":"I",  "c":"STORAGE",  "id":22430,   "ctx":"WTCheckpointThread","msg":"WiredTiger message","attr":{"message":"[1744526642:211934][1:0x7edd9d400700], WT_SESSION.checkpoint: [WT_VERB_CHECKPOINT_PROGRESS] saving checkpoint snapshot min: 69, snapshot max: 69 snapshot count: 0, oldest timestamp: (0, 0) , meta checkpoint timestamp: (0, 0) base write gen: 305"}}
+{"t":{"$date":"2025-04-13T06:38:36.685+00:00"},"s":"I",  "c":"NETWORK",  "id":22943,   "ctx":"listener","msg":"Connection accepted","attr":{"remote":"172.17.0.1:45842","connectionId":9,"connectionCount":1}}
+{"t":{"$date":"2025-04-13T06:38:36.708+00:00"},"s":"I",  "c":"NETWORK",  "id":51800,   "ctx":"conn9","msg":"client metadata","attr":{"remote":"172.17.0.1:45842","client":"conn9","doc":{"driver":{"name":"nodejs|Mongoose","version":"4.17.2|6.13.8"},"platform":"Node.js v20.19.0, LE","os":{"name":"linux","architecture":"x64","version":"6.8.0-57-generic","type":"Linux"}}}}
+{"t":{"$date":"2025-04-13T06:38:47.278+00:00"},"s":"I",  "c":"NETWORK",  "id":22943,   "ctx":"listener","msg":"Connection accepted","attr":{"remote":"172.17.0.1:45474","connectionId":10,"connectionCount":2}}
+{"t":{"$date":"2025-04-13T06:38:47.281+00:00"},"s":"I",  "c":"NETWORK",  "id":51800,   "ctx":"conn10","msg":"client metadata","attr":{"remote":"172.17.0.1:45474","client":"conn10","doc":{"driver":{"name":"nodejs|Mongoose","version":"4.17.2|6.13.8"},"platform":"Node.js v20.19.0, LE","os":{"name":"linux","architecture":"x64","version":"6.8.0-57-generic","type":"Linux"}}}}
+{"t":{"$date":"2025-04-13T06:39:01.909+00:00"},"s":"I",  "c":"STORAGE",  "id":22430,   "ctx":"WTCheckpointThread","msg":"WiredTiger message","attr":{"message":"[1744526341:909575][1:0x76d46e200700], WT_SESSION.checkpoint: [WT_VERB_CHECKPOINT_PROGRESS] saving checkpoint snapshot min: 54, snapshot max: 54 snapshot count: 0, oldest timestamp: (0, 0) , meta checkpoint timestamp: (0, 0) base write gen: 305"}}
+{"t":{"$date":"2025-04-13T06:40:01.987+00:00"},"s":"I",  "c":"STORAGE",  "id":22430,   "ctx":"WTCheckpointThread","msg":"WiredTiger message","attr":{"message":"[1744526401:987619][1:0x76d46e200700], WT_SESSION.checkpoint: [WT_VERB_CHECKPOINT_PROGRESS] saving checkpoint snapshot min: 56, snapshot max: 56 snapshot count: 0, oldest timestamp: (0, 0) , meta checkpoint timestamp: (0, 0) base write gen: 305"}}
+{"t":{"$date":"2025-04-13T06:41:02.047+00:00"},"s":"I",  "c":"STORAGE",  "id":22430,   "ctx":"WTCheckpointThread","msg":"WiredTiger message","attr":{"message":"[1744526462:47636][1:0x76d46e200700], WT_SESSION.checkpoint: [WT_VERB_CHECKPOINT_PROGRESS] saving checkpoint snapshot min: 58, snapshot max: 58 snapshot count: 0, oldest timestamp: (0, 0) , meta checkpoint timestamp: (0, 0) base write gen: 305"}}
+{"t":{"$date":"2025-04-13T06:42:02.070+00:00"},"s":"I",  "c":"STORAGE",  "id":22430,   "ctx":"WTCheckpointThread","msg":"WiredTiger message","attr":{"message":"[1744526522:70522][1:0x76d46e200700], WT_SESSION.checkpoint: [WT_VERB_CHECKPOINT_PROGRESS] saving checkpoint snapshot min: 60, snapshot max: 60 snapshot count: 0, oldest timestamp: (0, 0) , meta checkpoint timestamp: (0, 0) base write gen: 305"}}
+{"t":{"$date":"2025-04-13T06:43:02.131+00:00"},"s":"I",  "c":"STORAGE",  "id":22430,   "ctx":"WTCheckpointThread","msg":"WiredTiger message","attr":{"message":"[1744526582:131850][1:0x76d46e200700], WT_SESSION.checkpoint: [WT_VERB_CHECKPOINT_PROGRESS] saving checkpoint snapshot min: 62, snapshot max: 62 snapshot count: 0, oldest timestamp: (0, 0) , meta checkpoint timestamp: (0, 0) base write gen: 305"}}
+{"t":{"$date":"2025-04-13T06:44:02.157+00:00"},"s":"I",  "c":"STORAGE",  "id":22430,   "ctx":"WTCheckpointThread","msg":"WiredTiger message","attr":{"message":"[1744526642:157320][1:0x76d46e200700], WT_SESSION.checkpoint: [WT_VERB_CHECKPOINT_PROGRESS] saving checkpoint snapshot min: 64, snapshot max: 64 snapshot count: 0, oldest timestamp: (0, 0) , meta checkpoint timestamp: (0, 0) base write gen: 305"}}
+{"t":{"$date":"2025-04-13T06:37:20.935+00:00"},"s":"I",  "c":"NETWORK",  "id":22944,   "ctx":"conn8","msg":"Connection ended","attr":{"remote":"172.17.0.1:45748","connectionId":8,"connectionCount":1}}
+{"t":{"$date":"2025-04-13T06:37:20.944+00:00"},"s":"I",  "c":"-",        "id":20883,   "ctx":"conn7","msg":"Interrupted operation as its client disconnected","attr":{"opId":16707}}
+{"t":{"$date":"2025-04-13T06:37:20.964+00:00"},"s":"I",  "c":"NETWORK",  "id":22944,   "ctx":"conn7","msg":"Connection ended","attr":{"remote":"172.17.0.1:34492","connectionId":7,"connectionCount":0}}
+{"t":{"$date":"2025-04-13T06:38:03.882+00:00"},"s":"I",  "c":"STORAGE",  "id":22430,   "ctx":"WTCheckpointThread","msg":"WiredTiger message","attr":{"message":"[1744526283:882592][1:0x7c02e1000700], WT_SESSION.checkpoint: [WT_VERB_CHECKPOINT_PROGRESS] saving checkpoint snapshot min: 52, snapshot max: 52 snapshot count: 0, oldest timestamp: (0, 0) , meta checkpoint timestamp: (0, 0) base write gen: 305"}}
+{"t":{"$date":"2025-04-13T06:39:03.907+00:00"},"s":"I",  "c":"STORAGE",  "id":22430,   "ctx":"WTCheckpointThread","msg":"WiredTiger message","attr":{"message":"[1744526343:907716][1:0x7c02e1000700], WT_SESSION.checkpoint: [WT_VERB_CHECKPOINT_PROGRESS] saving checkpoint snapshot min: 54, snapshot max: 54 snapshot count: 0, oldest timestamp: (0, 0) , meta checkpoint timestamp: (0, 0) base write gen: 305"}}
+{"t":{"$date":"2025-04-13T06:40:03.929+00:00"},"s":"I",  "c":"STORAGE",  "id":22430,   "ctx":"WTCheckpointThread","msg":"WiredTiger message","attr":{"message":"[1744526403:929502][1:0x7c02e1000700], WT_SESSION.checkpoint: [WT_VERB_CHECKPOINT_PROGRESS] saving checkpoint snapshot min: 56, snapshot max: 56 snapshot count: 0, oldest timestamp: (0, 0) , meta checkpoint timestamp: (0, 0) base write gen: 305"}}
+{"t":{"$date":"2025-04-13T06:41:03.953+00:00"},"s":"I",  "c":"STORAGE",  "id":22430,   "ctx":"WTCheckpointThread","msg":"WiredTiger message","attr":{"message":"[1744526463:953003][1:0x7c02e1000700], WT_SESSION.checkpoint: [WT_VERB_CHECKPOINT_PROGRESS] saving checkpoint snapshot min: 58, snapshot max: 58 snapshot count: 0, oldest timestamp: (0, 0) , meta checkpoint timestamp: (0, 0) base write gen: 305"}}
+{"t":{"$date":"2025-04-13T06:42:04.021+00:00"},"s":"I",  "c":"STORAGE",  "id":22430,   "ctx":"WTCheckpointThread","msg":"WiredTiger message","attr":{"message":"[1744526524:21866][1:0x7c02e1000700], WT_SESSION.checkpoint: [WT_VERB_CHECKPOINT_PROGRESS] saving checkpoint snapshot min: 60, snapshot max: 60 snapshot count: 0, oldest timestamp: (0, 0) , meta checkpoint timestamp: (0, 0) base write gen: 305"}}
+{"t":{"$date":"2025-04-13T06:43:04.095+00:00"},"s":"I",  "c":"STORAGE",  "id":22430,   "ctx":"WTCheckpointThread","msg":"WiredTiger message","attr":{"message":"[1744526584:95034][1:0x7c02e1000700], WT_SESSION.checkpoint: [WT_VERB_CHECKPOINT_PROGRESS] saving checkpoint snapshot min: 62, snapshot max: 62 snapshot count: 0, oldest timestamp: (0, 0) , meta checkpoint timestamp: (0, 0) base write gen: 305"}}
+{"t":{"$date":"2025-04-13T06:44:04.118+00:00"},"s":"I",  "c":"STORAGE",  "id":22430,   "ctx":"WTCheckpointThread","msg":"WiredTiger message","attr":{"message":"[1744526644:118540][1:0x7c02e1000700], WT_SESSION.checkpoint: [WT_VERB_CHECKPOINT_PROGRESS] saving checkpoint snapshot min: 64, snapshot max: 64 snapshot count: 0, oldest timestamp: (0, 0) , meta checkpoint timestamp: (0, 0) base write gen: 305"}}
+mongodb://localhost:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.5.0
+mongodb://localhost:27018/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.5.0
+mongodb://localhost:27019/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.5.0
+=== Code Inspection ===
+const express = require('express');
+const mongoose = require('mongoose');
+const cors = require('cors');
+const authRoutes = require('./routes/auth');
+require('dotenv').config();
+mongoose.set('strictQuery', true);
+const app = express();
+app.use(cors());
+app.use(express.json());
+mongoose.set('strictQuery', true);
+mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost:27017/auth_db')
+  .then(() => console.log('MongoDB connected'))
+  .catch(err => console.error('MongoDB error:', err));
+
+app.use('/api/auth', authRoutes);
+
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).json({ error: 'Internal server error' });
+});
+
+const PORT = process.env.PORT || 3001;
+app.listen(PORT, () => console.log(`Auth service running on port ${PORT}`));
+const express = require('express');
+const mongoose = require('mongoose');
+const cors = require('cors');
+require('dotenv').config();
+
+const app = express();
+app.use(cors());
+app.use(express.json());
+mongoose.set('strictQuery', true);
+mongoose.connect(process.env.MONGO_URI)
+  .then(() => console.log('MongoDB connected'))
+  .catch(err => console.error('MongoDB error:', err));
+
+app.get('/', (req, res) => res.send('Product service running'));
+
+const PORT = process.env.PORT || 3002;
+app.listen(PORT, () => console.log(`Product service running on port ${PORT}`));
+const express = require('express');
+const mongoose = require('mongoose');
+const cors = require('cors');
+require('dotenv').config();
+
+const app = express();
+app.use(cors());
+app.use(express.json());
+mongoose.set('strictQuery', true);
+mongoose.connect(process.env.MONGO_URI)
+  .then(() => console.log('MongoDB connected'))
+  .catch(err => console.error('MongoDB error:', err));
+
+app.get('/', (req, res) => res.send('Order service running'));
+
+const PORT = process.env.PORT || 3003;
+app.listen(PORT, () => console.log(`Order service running on port ${PORT}`));
+/home/eya/phone-accessories-app-2/auth-service/src/index.js:mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost:27017/auth_db')
+/home/eya/phone-accessories-app-2/order-service/src/index.js:mongoose.connect(process.env.MONGO_URI)
+/home/eya/phone-accessories-app-2/product-service/src/index.js:mongoose.connect(process.env.MONGO_URI)
+{
+  "name": "auth-service",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^6.10.0",
+    "cors": "^2.8.5",
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^9.0.0",
+    "dotenv": "^16.0.3"
+  }
+}
+{
+  "name": "product-service",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^6.10.0",
+    "cors": "^2.8.5",
+    "jsonwebtoken": "^9.0.0",
+    "dotenv": "^16.0.3"
+  }
+}
+{
+  "name": "order-service",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "axios": "^1.4.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^6.10.0"
+  }
+}
+=== Next Steps ===
+Review output for errors (e.g., EADDRINUSE, MongoServerError, Connection refused).
+Check service logs in ~/phone-accessories-app-2/*/service.log.
+Verify .env files and MongoDB URIs.
+Restart services with: npm start > service.log 2>&1 &
