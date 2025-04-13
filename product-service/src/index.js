@@ -1,19 +1,33 @@
-console.log('Starting product service...');
-process.on('uncaughtException', (err) => console.error('Uncaught:', err));
-process.on('unhandledRejection', (err) => console.error('Unhandled:', err));const express = require('express');
+const express = require('express');
 const mongoose = require('mongoose');
-const cors = require('cors');
-require('dotenv').config();
-
 const app = express();
-app.use(cors());
-app.use(express.json());
-mongoose.set('strictQuery', true);
-mongoose.connect(process.env.MONGO_URI)
-  .then(() => console.log('MongoDB connected'))
-  .catch(err => console.error('MongoDB error:', err));
 
-app.get('/', (req, res) => res.send('Product service running'));
+mongoose.connect('mongodb://localhost:27018/product_db', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
-const PORT = process.env.PORT || 3002;
-app.listen(PORT, () => console.log(`Product service running on port ${PORT}`));
+const productSchema = new mongoose.Schema({
+  id: Number,
+  name: String,
+  price: Number,
+  description: String,
+  image: String,
+  stock: Number,
+});
+
+const Product = mongoose.model('Product', productSchema);
+
+app.get('/', async (req, res) => {
+  try {
+    const products = await Product.find();
+    res.json(products);
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Server error');
+  }
+});
+
+app.listen(3002, () => {
+  console.log('Product service running on port 3002');
+});
