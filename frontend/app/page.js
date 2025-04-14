@@ -12,32 +12,33 @@ export default function Home() {
   const [cart, setCart] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [products, setProducts] = useState([]);
+  const [error, setError] = useState(null);
 
   async function getProducts() {
     try {
-      const res = await fetch('http://localhost:3002');
-      if (!res.ok) throw new Error('Fetch failed');
+      const res = await fetch('http://localhost:3002', { cache: 'no-store' });
+      if (!res.ok) {
+        throw new Error(`HTTP error: ${res.status}`);
+      }
       const data = await res.json();
-      console.log('Products fetched:', data);
+      console.log('Fetched products:', data.length);
       return data;
     } catch (e) {
-      console.error('Product fetch error:', e.message);
-      return [
-        { id: 1, name: 'Phone Case', price: 10 },
-        { id: 2, name: 'Charger', price: 20 }
-      ];
+      console.error('Fetch error:', e.message);
+      setError('Failed to load products. Please try again later.');
+      return [];
     }
   }
 
   useEffect(() => {
     const storedToken = localStorage.getItem('token');
     if (storedToken) {
-      setToken(storedToken);
       try {
+        setToken(storedToken);
         const decoded = jwtDecode(storedToken);
         setRole(decoded.role || 'user');
       } catch (err) {
-        console.error('Token decode error:', err.message);
+        console.error('Token error:', err.message);
         setToken('');
         setRole('');
         localStorage.removeItem('token');
@@ -52,14 +53,18 @@ export default function Home() {
         <>
           <Navbar token={token} setToken={setToken} cart={cart} setSearchQuery={setSearchQuery} />
           <Hero />
-          <ProductList
-            token={token}
-            role={role}
-            cart={cart}
-            setCart={setCart}
-            searchQuery={searchQuery}
-            products={products}
-          />
+          {error ? (
+            <p className="text-red-500 text-center p-4">{error}</p>
+          ) : (
+            <ProductList
+              token={token}
+              role={role}
+              cart={cart}
+              setCart={setCart}
+              searchQuery={searchQuery}
+              products={products}
+            />
+          )}
         </>
       ) : (
         <Login setToken={setToken} />
