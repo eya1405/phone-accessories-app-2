@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
-
+mongoose.set('strictQuery', true);
 mongoose.connect('mongodb://localhost:27018/product_db', {
   useNewUrlParser: true,
   useUnifiedTopology: true,

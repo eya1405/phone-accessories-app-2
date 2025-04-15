@@ -1,17 +1,42 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const cors = require('cors');
-require('dotenv').config();
-
 const app = express();
-app.use(cors());
+
+mongoose.connect('mongodb://localhost:27019/order_db', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
+
 app.use(express.json());
-mongoose.set('strictQuery', true);
-mongoose.connect(process.env.MONGO_URI)
-  .then(() => console.log('MongoDB connected'))
-  .catch(err => console.error('MongoDB error:', err));
 
-app.get('/', (req, res) => res.send('Order service running'));
+const cartSchema = new mongoose.Schema({
+  userId: String,
+  items: [{ productId: Number, quantity: Number, price: Number }],
+});
+const Cart = mongoose.model('Cart', cartSchema);
 
-const PORT = process.env.PORT || 3003;
-app.listen(PORT, () => console.log(`Order service running on port ${PORT}`));
+app.get('/api/cart/:userId', async (req, res) => {
+  try {
+    const cart = await Cart.findOne({ userId: req.params.userId });
+    res.json(cart || { userId: req.params.userId, items: [] });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+app.post('/api/cart/:userId', async (req, res) => {
+  try {
+    const { productId, quantity, price } = req.body;
+    let cart = await Cart.findOne({ userId: req.params.userId });
+    if (!cart) {
+      cart = new Cart({ userId: req.params.userId, items: [] });
+    }
+    cart.items.push({ productId, quantity, price });
+    await cart.save();
+    res.json(cart);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+app.listen(3003, () => console.log('Order service running on port 3003'));

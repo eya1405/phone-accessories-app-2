@@ -16,16 +16,23 @@ export default function Home() {
 
   async function getProducts() {
     try {
-      const res = await fetch('http://localhost:3002', { cache: 'no-store' });
+      const res = await fetch('http://localhost:3002', {
+        method: 'GET',
+        cache: 'no-store',
+        headers: { 'Content-Type': 'application/json' }
+      });
       if (!res.ok) {
-        throw new Error(`HTTP error: ${res.status}`);
+        throw new Error(`Fetch failed: ${res.status} ${res.statusText}`);
       }
       const data = await res.json();
-      console.log('Fetched products:', data.length);
+      if (!Array.isArray(data)) {
+        throw new Error('Invalid response: expected an array');
+      }
+      console.log('Products fetched:', data.length, 'items');
       return data;
     } catch (e) {
-      console.error('Fetch error:', e.message);
-      setError('Failed to load products. Please try again later.');
+      console.error('Product fetch error:', e.message);
+      setError(e.message);
       return [];
     }
   }
@@ -38,13 +45,16 @@ export default function Home() {
         const decoded = jwtDecode(storedToken);
         setRole(decoded.role || 'user');
       } catch (err) {
-        console.error('Token error:', err.message);
+        console.error('Token decode error:', err.message);
         setToken('');
         setRole('');
         localStorage.removeItem('token');
       }
     }
-    getProducts().then(data => setProducts(data));
+    getProducts().then(data => {
+      setProducts(data);
+      setError(null);
+    });
   }, []);
 
   return (
@@ -54,7 +64,7 @@ export default function Home() {
           <Navbar token={token} setToken={setToken} cart={cart} setSearchQuery={setSearchQuery} />
           <Hero />
           {error ? (
-            <p className="text-red-500 text-center p-4">{error}</p>
+            <p className="text-red-500 text-center">Error loading products: {error}</p>
           ) : (
             <ProductList
               token={token}
@@ -70,5 +80,4 @@ export default function Home() {
         <Login setToken={setToken} />
       )}
     </div>
-  );
-}
+  );}

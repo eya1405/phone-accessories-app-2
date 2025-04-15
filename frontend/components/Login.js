@@ -11,13 +11,11 @@ export default function Login({ setToken }) {
     try {
       const res = await fetch('http://localhost:3001/api/auth/login', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': application/json' },
         body: JSON.stringify({ email, password }),
       });
       const data = await res.json();
-      if (!res.ok) {
-        throw new Error(data.message || 'Login failed');
-      }
+      if (!res.ok) throw new Error(data.message || 'Login failed');
       localStorage.setItem('token', data.token);
       setToken(data.token);
     } catch (err) {

@@ -5,7 +5,7 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const app = express();
 app.use(express.json());
-
+mongoose.set('strictQuery', true);
 mongoose.connect('mongodb://localhost:27017/auth_db', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
